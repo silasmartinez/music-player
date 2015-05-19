@@ -7,7 +7,8 @@ html, body, div, form, fieldset, legend, label
     width: 900px;
     margin: 0 auto;
     font-family: sans-serif;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 22px;
 }
 .header{
     background: black;
@@ -21,7 +22,7 @@ html, body, div, form, fieldset, legend, label
     padding: 20px 0 40px 0;
     margin: 0;
     clear: left;
-    border-top: 1px solid grey;
+    border-top: 1px solid #d3d3d3;
 }
 .control {
     margin: 0 10px 0 10px;
