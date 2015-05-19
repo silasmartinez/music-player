@@ -1,0 +1,36 @@
+html, body, div, form, fieldset, legend, label
+{
+    margin: 0;
+    padding: 0;
+}
+.tracklist{
+    width: 900px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+.header{
+    background: black;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    border-radius: 3px;
+}
+.track {
+    padding: 20px 0 40px 0;
+    margin: 0;
+    clear: left;
+    border-top: 1px solid grey;
+}
+.control {
+    margin: 0 10px 0 10px;
+    float: left;
+}
+.detail {
+    margin: 0;
+    float: left;
+}
+div:nth-of-type(2) {
+    border: none;
+}
