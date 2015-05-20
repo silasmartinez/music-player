@@ -14,7 +14,6 @@ var tracks = {
 };
 
 var nowPlaying = "";
-var id = "";
 
 var playTrack = function(id){
     player.src = "tracks/"+tracks.file[id];
@@ -38,19 +37,25 @@ header.innerHTML = "Select a Song!";
 showPlayButtons();
 
 for (var i = 0; i < tracks.file.length; i++) {
-    
+
     detail[i].innerHTML = tracks.title[i] + " by " + tracks.artist[i];
 
-    // Setting an ID, and then using it to control play events is a kludge, but
-    // less ugly than spelling these all out manually.
-    // A closure was proposed as an alternate approach, but I haven't yet solved that one.
+    var saveID = function(){
 
-    control[i].setAttribute("id","control." + i);
+        // Feeding the value of i (my iterator) into the anonymous function being returned by
+        // saveID, creating a closure (preserved state variable).
+
+        return function(closed){
+            return closed;
+        }(i);
+
+    };
+
+    // invoking saveID, capturing the state of i at the time of invocation
+    var id = saveID();
 
     control[i].addEventListener('click', function (e) {
 
-        console.dir(e.target.id);
-        id = e.target.id.split(".")[1];
 
         if (nowPlaying !== id) {
             playTrack(id);
